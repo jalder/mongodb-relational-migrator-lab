@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM --platform=linux/amd64 ubuntu
 RUN apt update
 RUN apt install -y curl openssl xdg-utils
 RUN curl -OL https://downloads.mongodb.org/migrator/1.4.4/mongodb-relational-migrator_1.4.4_amd64.deb
