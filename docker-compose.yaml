@@ -1,0 +1,23 @@
+version: "3"
+services:
+  migrator:
+    build: .
+    ports: 
+      - 8278:8278
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: hunter2
+    ports:
+      - 3306:3306
+  mongodb:
+    image: "mongodb/mongodb-community-server"
+    ports:
+      - 27017:27017
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
